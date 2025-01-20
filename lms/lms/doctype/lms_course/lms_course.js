@@ -4,14 +4,17 @@
 frappe.ui.form.on("LMS Course", {
 	onload: function (frm) {
 		frm.set_query("chapter", "chapters", function () {
+			
 			return {
 				filters: {
 					course: frm.doc.name,
 				},
 			};
+			
 		});
 
 		frm.set_query("course", "related_courses", function () {
+			console.log("chapter created successfully")
 			return {
 				filters: {
 					published: true,
